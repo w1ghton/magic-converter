@@ -1,5 +1,5 @@
 import os
-from . import index
+from . import index, errors
 from flask import Flask
 
 
@@ -17,5 +17,6 @@ def create_app(test_config=None):
         pass
 
     app.register_blueprint(index.bp)
+    app.register_blueprint(errors.bp)
 
     return app

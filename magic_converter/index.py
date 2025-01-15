@@ -13,10 +13,13 @@ def index_get():
 def index_post():
     data = requests.get("https://www.cbr-xml-daily.ru/daily_json.js").json()
     exchange_rate = data["Valute"]["GBP"]["Value"]
-    gbp = (
-        int(request.form.get("galleons", 0)) * 4.93
-        + int(request.form.get("sickles", 0)) * 0.29
-        + int(request.form.get("knuts", 0)) * 0.01
-    )
+    try:
+        gbp = (
+            int(request.form.get("galleons", 0)) * 4.93
+            + int(request.form.get("sickles", 0)) * 0.29
+            + int(request.form.get("knuts", 0)) * 0.01
+        )
+    except ValueError:
+        gbp = 0
     rub = f"{round(gbp * exchange_rate):,}".replace(",", " ")
     return render_template("index/index.html", title="Magic Converter", rub=rub)

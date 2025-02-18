@@ -9,10 +9,10 @@ Harry Potter World currency converter to rubles.
 GBP to RUB exchange rate taken from the [API](https://www.cbr-xml-daily.ru/daily_json.js) of the Central Bank of Russia.
 
 ## Technologies
-![Python](https://img.shields.io/badge/Python-black?logo=python)
-![Flask](https://img.shields.io/badge/Flask-black?logo=flask)
-![HTML](https://img.shields.io/badge/HTML-black?logo=html5)
-![CSS](https://img.shields.io/badge/CSS-black?logo=css3&logoColor=1572B6)
-![Poetry](https://img.shields.io/badge/Poetry-black?logo=poetry)
+![Python](https://img.shields.io/badge/Python-gray?logo=python)
+![Flask](https://img.shields.io/badge/Flask-gray?logo=flask)
+![HTML](https://img.shields.io/badge/HTML-gray?logo=html5)
+![CSS](https://img.shields.io/badge/CSS-gray?logo=css3&logoColor=1572B6)
+![Poetry](https://img.shields.io/badge/Poetry-gray?logo=poetry)
 
-[![Docker](https://img.shields.io/badge/Docker-black?logo=docker)](https://hub.docker.com/r/w1ghton/magic-converter)
+[![Docker](https://img.shields.io/badge/Docker-gray?logo=docker)](https://hub.docker.com/r/w1ghton/magic-converter)

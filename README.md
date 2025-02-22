@@ -15,5 +15,5 @@ GBP to RUB exchange rate taken from the [API](https://www.cbr-xml-daily.ru/daily
 ![CSS](https://img.shields.io/badge/CSS-gray?logo=css3&style=for-the-badge&logoColor=1572B6)
 ![Poetry](https://img.shields.io/badge/Poetry-gray?style=for-the-badge&logo=poetry)
 
-![Docker Image Version](https://img.shields.io/docker/v/w1ghton/magic-converter?style=for-the-badge&logo=docker&label=Docker)
+[![Docker Image Version](https://img.shields.io/docker/v/w1ghton/magic-converter?style=for-the-badge&logo=docker&label=Docker)](https://hub.docker.com/r/w1ghton/magic-converter)
 

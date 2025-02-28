@@ -185,3 +185,4 @@ cython_debug/
 
 tests/
 .DS_Store
+favicon.png

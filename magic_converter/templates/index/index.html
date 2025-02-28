@@ -58,10 +58,14 @@
 			</span>
 		</div>
 		<button type="submit" class="btn btn-primary">Convert</button>
-		<select class="form-select" aria-label="Default select example">
+		<select
+			class="form-select"
+			aria-label="Default select example"
+			name="country"
+		>
 			<option selected>Open this select menu</option>
 			{% for currency in currencies %}
-			<option value="{{ currency['code'] }}">
+			<option value="{{ currency['value'] }}">
 				{{ currency['name'] }}
 			</option>
 			{% endfor %}

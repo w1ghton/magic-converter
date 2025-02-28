@@ -56,25 +56,27 @@
 					class="icon-k"
 				/>
 			</span>
+
+			<select
+				class="form-select"
+				aria-label="Default select example"
+				name="country"
+			>
+				<option selected value="RUB">RUB</option>
+				{% for currency in currencies %}
+				<option value="{{ currency['value'] }}|{{ currency['code'] }}">
+					{{ currency['code'] }}
+				</option>
+				{% endfor %}
+			</select>
+
+			<button type="submit" class="btn btn-primary">Convert</button>
 		</div>
-		<button type="submit" class="btn btn-primary">Convert</button>
-		<select
-			class="form-select"
-			aria-label="Default select example"
-			name="country"
-		>
-			<option selected>Open this select menu</option>
-			{% for currency in currencies %}
-			<option value="{{ currency['value'] }}">
-				{{ currency['name'] }}
-			</option>
-			{% endfor %}
-		</select>
 	</form>
 	<hr />
-	{% if rub %}
+	{% if res %}
 	<div class="h3">
-		Converted amount: <span class="text-primary">{{ rub }}</span>₽
+		Converted amount: <span class="text-primary">{{ res }}</span>{{ code }}
 	</div>
 	{% else %}
 	<div class="h3">Converted amount will appear here</div>

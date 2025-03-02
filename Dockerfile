@@ -1,7 +1,7 @@
 FROM python:3.12-alpine
 WORKDIR /app
 
-COPY . .
+COPY poetry.lock pyproject.toml ./
 
 RUN apk update && apk upgrade && apk add curl
 
@@ -10,6 +10,8 @@ RUN curl -sSL https://install.python-poetry.org | python3 -
 ENV PATH="/root/.local/bin:$PATH"
 
 RUN poetry install --no-root
+
+COPY . .
 
 EXPOSE 5000
 

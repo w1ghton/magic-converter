@@ -46,10 +46,12 @@ def index_post():
         rate, code = country.split("|")
         exchange_rate = float(rate)
         res = rub / exchange_rate
+
+    res=f"{round(res, 2):,}".replace(',', ' ')
     return render_template(
         "index/index.html",
         title="Magic Converter",
-        res=round(res, 2),
+        res=res,
         currencies=currencies,
         code=code,
     )

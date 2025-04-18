@@ -10,6 +10,11 @@ Harry Potter World currency converter.
 
 GBP to RUB exchange rate taken from the [API](https://www.cbr-xml-daily.ru/daily_json.js) of the Central Bank of Russia.
 
+## Launch
+```sh
+flask --app magic_converter run 
+```
+
 ## Technologies
 
 ![Python Version from PEP 621 TOML](https://img.shields.io/python/required-version-toml?tomlFilePath=https%3A%2F%2Fraw.githubusercontent.com%2Fw1ghton%2Fmagic-converter%2Frefs%2Fheads%2Fmaster%2Fpyproject.toml&style=for-the-badge&logo=python&label=Python)

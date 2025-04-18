@@ -62,10 +62,10 @@
 				aria-label="Default select example"
 				name="country"
 			>
-				<option selected value="RUB">RUB</option>
+				<option selected value="RUB">Российский рубль</option>
 				{% for currency in currencies %}
-				<option value="{{ currency['value'] }}|{{ currency['code'] }}">
-					{{ currency['code'] }}
+				<option value="{{ currency['value'] }}|{{ currency['code'] }}| {{ currency['nominal'] }}">
+					{{ currency['name'] }}
 				</option>
 				{% endfor %}
 			</select>

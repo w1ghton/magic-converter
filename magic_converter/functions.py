@@ -19,6 +19,7 @@ def get_currencies_list(api_response: Dict[str, Any]) -> List[Dict[str, Any]]:
             "code": currency,
             "value": currencies.get(currency, {}).get("Value", ""),
             "name": currencies.get(currency, {}).get("Name", ""),
+            "nominal": currencies.get(currency, {}).get("Nominal", ""),
         }
         for currency in currencies
     ]

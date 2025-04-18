@@ -8,16 +8,12 @@ KNUT_RATE = 0.01
 bp = Blueprint("index", __name__, url_prefix="/")
 
 
-def get_currencies(data):
-    return get_currencies_list(data)
-
-
 @bp.get("/")
 def index_get():
     data = get_api_data()
     if data is None:
         return render_template("error.html")
-    currencies = get_currencies(data)
+    currencies = get_currencies_list(data)
     return render_template(
         "index/index.html", title="Magic Converter", currencies=currencies
     )
@@ -28,7 +24,7 @@ def index_post():
     data = get_api_data()
     if data is None:
         return render_template("error.html")
-    currencies = get_currencies(data)
+    currencies = get_currencies_list(data)
     try:
         gbp = (
             int(request.form.get("galleons", 0)) * GALLEON_RATE
@@ -43,11 +39,12 @@ def index_post():
         res = rub
         code = country
     else:
-        rate, code = country.split("|")
+        rate, code, nominal = country.split("|")
         exchange_rate = float(rate)
-        res = rub / exchange_rate
+        nominal = float(nominal)
+        res = rub * nominal / exchange_rate
 
-    res=f"{round(res, 2):,}".replace(',', ' ')
+    res = f"{round(res, 2):,}".replace(",", " ")
     return render_template(
         "index/index.html",
         title="Magic Converter",

@@ -1,7 +1,6 @@
 from typing import Any, Dict, List
 
 import requests
-from pydantic import Field
 
 
 def get_api_data() -> Dict[str, Any]:
@@ -28,9 +27,7 @@ def get_currencies_list(api_response: Dict[str, Any]) -> List[Dict[str, Any]]:
     return exchange_rate
 
 
-def get_gbp(
-    galleons: int = Field(ge=0), sickles: int = Field(ge=0), knuts: int = Field(ge=0)
-) -> float:
+def get_gbp(galleons: int, sickles: int, knuts: int) -> float:
     GALLEON_RATE = 4.93
     SICKLE_RATE = 0.29
     KNUT_RATE = 0.01

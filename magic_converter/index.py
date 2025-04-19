@@ -1,9 +1,6 @@
 from flask import Blueprint, render_template, request
-from .functions import get_currencies_list, get_api_data
 
-GALLEON_RATE = 4.93
-SICKLE_RATE = 0.29
-KNUT_RATE = 0.01
+from .functions import get_api_data, get_currencies_list, get_gbp
 
 bp = Blueprint("index", __name__, url_prefix="/")
 
@@ -26,10 +23,10 @@ def index_post():
         return render_template("error.html")
     currencies = get_currencies_list(data)
     try:
-        gbp = (
-            int(request.form.get("galleons", 0)) * GALLEON_RATE
-            + int(request.form.get("sickles", 0)) * SICKLE_RATE
-            + int(request.form.get("knuts", 0)) * KNUT_RATE
+        gbp = get_gbp(
+            int(request.form.get("galleons", 0)),
+            int(request.form.get("sickles", 0)),
+            int(request.form.get("knuts", 0)),
         )
     except ValueError:
         gbp = 0
